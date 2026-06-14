@@ -1,9 +1,11 @@
 public class MainAdapter {
     public static void main(String[] args) {
-        FilmeDVD dvd = new FilmeDVD();
+        LegacyLogger legacy = new LegacyLogger();
 
-        FilmeStreaming streaming = new FilmeAdapter(dvd);
+        Logger logger = new LegacyLoggerAdapter(legacy);
 
-        streaming.assistirFilme("Vingadores: Ultimato");
+        Application app = new Application(logger);
+
+        app.run();
     }
 }
